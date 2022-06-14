@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+html,
+body {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  background-color: black;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav > ul li {
+  flex: 1 1 auto;
+  margin: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav > ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav > ul li a:hover {
+  color: black;
+  list-style: none;
+}
+
+.todo-page {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  height: 100%;
+}
+
+.todo-page-content {
+  width: 100%;
+}
+
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.todo-list-content {
+  border-radius: 5px;
+  background-color: #1f2a48;
+  padding: 25px;
+}
+
+.todo-input-content {
+  align-items: center;
+  background-color: #349ee9;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  padding: 3px 5px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  transition: 0.3s ease all;
+}
+
+.todo-input {
+  color: white;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  appearance: none;
+  border-radius: 5px;
+  caret-color: red;
+  font-size: 1.5rem;
+  transition: 0.3s ease all;
+}
+
+.todo-input:focus {
+  background-color: white;
+  font-weight: 400;
+}
+
+.todo-form {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.todo-list-item {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.title-white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.list-box {
+  flex: 0.1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-input {
+  flex: 1;
+  background-color: white;
+  color: white;
+  border: 1px solid white;
+  transition: 0.3s ease all;
+}
+
+.list-input:hover {
+  border: 1px solid #349ee8;
+  transition: 0.3s ease all;
+}
+
+.list-button {
 }
