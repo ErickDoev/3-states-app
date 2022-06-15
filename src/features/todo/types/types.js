@@ -6,4 +6,7 @@ export const types = {
   todoToogledAll: '[TODO] Toogle All Todos',
   todoDeleteAll: '[TODO] Delete All Todos',
   todoDeleteActives: '[TODO] Delete Active Todos',
+  openModal: '[TODO] Open Modal',
+
+  noteAddNote: '[NoteR] Add New Note'
 }

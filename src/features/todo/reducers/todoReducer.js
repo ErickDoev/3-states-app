@@ -1,8 +1,9 @@
-import { data } from '../../data/todoData'
+import { notesData as data } from '../../data/notesData'
 import { types } from '../types/types'
 
 const initialState = {
-  todos: data
+  todos: data,
+  isOpenModal: false
 };
 
 export const todoReducer = (state = initialState, action) => {
@@ -18,7 +19,6 @@ export const todoReducer = (state = initialState, action) => {
       }
 
     case types.todoUpdate:
-      console.log(action.payload);
       return {
         todos: state.todos.map((todo) =>
           todo.uid === action.payload.id
@@ -49,6 +49,18 @@ export const todoReducer = (state = initialState, action) => {
     case types.todoDeleteActives:
       return {
         todos: state.todos.filter((todo) => todo.active !== true),
+      }
+    
+    case types.openModal: 
+      return {
+        ...state,
+        isOpenModal: !state.isOpenModal
+      }
+    
+    case types.noteAddNote: 
+      return {
+        ...state,
+        todos: [...state.todos, action.payload]
       }
 
     default:

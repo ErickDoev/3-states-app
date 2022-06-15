@@ -26,10 +26,9 @@ export const TodoContextScreen = () => {
         <div className="todo-page-content">
           <h1 className="text-white text-center">Todo ContextApi</h1>
           <div className="todo-list-container">
-            <TodoInput />
+           
             <TodoList />
           </div>
-          <TodoButtons />
         </div>
         <AddNewNote />
         <NotesModal />

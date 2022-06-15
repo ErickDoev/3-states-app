@@ -39,3 +39,17 @@ export const deleteAllTodos = () => ({
 export const deleteActivedTodos = () => ({
   type: types.todoDeleteActives,
 })
+
+export const openModal = () => ({
+  type: types.openModal
+})
+
+export const addNewNote = (note) => ({
+  type: types.noteAddNote,
+  payload: {
+    ...note,
+    uid: new Date().getTime(),
+    fullDate: new Date().getTime(),
+    active: false
+  }
+})

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { useForm } from '../../shared/hooks/useForm'
-import { deleteTodo, setActiveModalNote, setActiveTodo, updateNote } from '../actions/todoActions'
+import { deleteNote, setActiveModalNote, setActiveTodo, updateNote } from '../actions/todoActions'
 import { TodoContext } from '../context/TodoContext'
 import { openModal } from "../actions/todoActions";
 
@@ -22,7 +22,8 @@ export const TodoListItem = ({ uid, active, title: titleProp, note: noteProp, da
   }
 
   const handleDelete = () => {
-    //dispatch(deleteTodo(uid))
+    console.log(uid);
+    dispatch(deleteNote(uid))
   }
 
   const handleOpenModal = () => {
@@ -34,30 +35,16 @@ export const TodoListItem = ({ uid, active, title: titleProp, note: noteProp, da
     <div className="notes-item-container">
       <div className="notes-item-header mb-2">
         <div>
-          <div className="notes-icon notes-icon-r">
-            <i className="fa-solid fa-print"></i>
-          </div>
-          <div className="notes-icon">
-            <i className="fa-solid fa-cloud-arrow-down"></i>
-          </div>
+ 
         </div>
         <div>
-          <div className='notes-icon notes-icon-r'>
-            <i className="fa-solid fa-pen-to-square"></i>
-          </div>
           <div className="notes-icon notes-icon-l" onClick={handleDelete}>
             <i className="fa-solid fa-eraser"></i>
           </div>
         </div>
       </div>
       <div className="notes-item-content">
-        <input
-          onChange={() => {
-            handleChangeChecbox(uid)
-          }}
-          type="checkbox"
-          checked={active}
-        />
+
         <input
           type="text"
           value={title}

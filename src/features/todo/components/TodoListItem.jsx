@@ -6,14 +6,14 @@ import {
   updateTodo,
 } from '../actions/todoActions'
 
-export const TodoListItem = ({ id, todo, active }) => {
+export const TodoListItem = ({ id, title, note, fulldate, active }) => {
   const [inputValue, setInputValue] = useState({
-    todo,
+    title,
+    note
   })
 
   const dispatch = useDispatch()
-  const handleChange = (e) => {
-    console.log(e.target.value)
+  const handleInputChange = (e) => {
     setInputValue({ todo: e.target.value })
   }
 
@@ -30,26 +30,35 @@ export const TodoListItem = ({ id, todo, active }) => {
   }
 
   return (
-    <li className='todo-list-item'>
-     <input
-        type="checkbox"
-        checked={active}
-        name="active"
-        onChange={handleChangeChecbox}
-        className='list-box'
-      />
+    <div className='notes-item-container'>
+      <div className='notes-item-header mb-2'>
+        <div></div>
+        <div>
+          <div className="notes-icon notes-icon-l" onClick={handleDelete}>
+            <i className="fa-solid fa-eraser"></i>
+          </div>
+        </div>
+      </div>
+      <div className='notes-item-content'>
       <input
-        type="text"
-        value={inputValue.todo}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        className='list-input '
-      />
-      <button 
-        className='btn btn-warning'
-        onClick={handleDelete}>Borrar</button> 
-
-    </li>
+          type="text"
+          value={title}
+          name="title"
+          onChange={handleInputChange}
+          className="modal-input modal-input-title"
+          onBlur={handleBlur}
+        />
+        <textarea
+          className="modal-input modal-scroll"
+          value={note}
+          name="note"
+          onChange={handleInputChange}
+          onBlur={handleBlur}
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+    </div>
   )
 }
 
